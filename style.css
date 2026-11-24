@@ -1,0 +1,188 @@
+:root {
+  --bg: #faf7fd;
+  --surface: #ffffff;
+  --surface-raised: #f4eefc;
+  --text: #1c1326;
+  --text-muted: #6b5d82;
+  --text-faint: #9686b3;
+  --accent: #7c3fe0;
+  --accent-ink: #ffffff;
+  --border: #e4dbf5;
+  --rule: #ddd0f2;
+  --mono-bg: #f1e9fb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d0815;
+    --surface: #150e21;
+    --surface-raised: #1c1430;
+    --text: #f1ebfa;
+    --text-muted: #ad9cc9;
+    --text-faint: #7c6a98;
+    --accent: #b48bff;
+    --accent-ink: #15091f;
+    --border: #2a2040;
+    --rule: #342a4c;
+    --mono-bg: #1c1430;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d0815;
+  --surface: #150e21;
+  --surface-raised: #1c1430;
+  --text: #f1ebfa;
+  --text-muted: #ad9cc9;
+  --text-faint: #7c6a98;
+  --accent: #b48bff;
+  --accent-ink: #15091f;
+  --border: #2a2040;
+  --rule: #342a4c;
+  --mono-bg: #1c1430;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 24px 100px;
+}
+
+.kicker {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.kicker::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+
+h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(32px, 5vw, 44px);
+  line-height: 1.1;
+  margin: 0 0 10px;
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12.5px;
+  color: var(--text-faint);
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  font-variant-numeric: tabular-nums;
+}
+
+.doc-meta b { color: var(--text-muted); font-weight: 600; }
+
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 44px;
+}
+
+.toc a {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.toc a:hover { border-color: var(--accent); color: var(--accent); }
+
+section { margin-bottom: 40px; scroll-margin-top: 24px; }
+
+h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 22px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+
+h2 .num {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+p { margin: 0 0 14px; max-width: 64ch; color: var(--text); }
+p.muted, li.muted { color: var(--text-muted); }
+
+ul { margin: 0 0 14px; padding-left: 22px; max-width: 64ch; }
+li { margin-bottom: 6px; }
+
+code, .inline-mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.88em;
+  background: var(--mono-bg);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.callout {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin: 0 0 16px;
+  font-size: 14.5px;
+  color: var(--text-muted);
+  max-width: 64ch;
+}
+.callout strong { color: var(--text); }
+
+.footer-nav {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-faint);
+}
+.footer-nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.footer-nav a:hover { text-decoration: underline; }

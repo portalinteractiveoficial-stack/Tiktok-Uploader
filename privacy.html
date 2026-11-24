@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TikTok Studio — Política de Privacidade</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">TikTok Studio · Documento legal</div>
+  <h1>Política de Privacidade</h1>
+  <div class="doc-meta">
+    <span><b>Vigência</b> 24 de novembro de 2026</span>
+    <span><b>Aplicativo</b> TikTok Studio (desktop, Windows)</span>
+    <span><b>Execução</b> 100% local no seu computador</span>
+  </div>
+
+  <nav class="toc">
+    <a href="#principio">1. Princípio geral</a>
+    <a href="#dados-tiktok">2. Dados da sua conta TikTok</a>
+    <a href="#arquivos">3. Seus arquivos de vídeo</a>
+    <a href="#armazenamento">4. Onde tudo fica guardado</a>
+    <a href="#logs">5. Logs de diagnóstico</a>
+    <a href="#terceiros">6. Compartilhamento com terceiros</a>
+    <a href="#controle">7. Seu controle sobre os dados</a>
+    <a href="#contato">8. Contato</a>
+  </nav>
+
+  <section id="principio">
+    <h2><span class="num">01</span> Princípio geral</h2>
+    <p>O TikTok Studio roda inteiramente no seu computador. Ele não tem um servidor próprio, não tem conta de usuário própria e não coleta dados de outras pessoas — ele existe para ajudar <em>você</em> a preparar e publicar os <em>seus</em> vídeos na <em>sua</em> conta do TikTok.</p>
+    <div class="callout"><strong>Em resumo:</strong> nada do que você faz no aplicativo é enviado para nós. As únicas comunicações de rede que ele faz são diretamente com os servidores oficiais da TikTok Inc. (<code>tiktok.com</code> e <code>open.tiktokapis.com</code>).</div>
+  </section>
+
+  <section id="dados-tiktok">
+    <h2><span class="num">02</span> Dados da sua conta TikTok</h2>
+    <p>Ao conectar sua conta, o TikTok Studio recebe da própria TikTok, via OAuth2 oficial:</p>
+    <ul>
+      <li>Um token de acesso e um token de atualização (<code>access_token</code> / <code>refresh_token</code>);</li>
+      <li>Seu identificador público (<code>open_id</code>), nome de usuário, nome de exibição e foto de perfil;</li>
+      <li>As opções de privacidade e permissões (comentários, duetos, stitches) que sua própria conta já tem configuradas no TikTok.</li>
+    </ul>
+    <p>O aplicativo nunca vê nem armazena sua senha do TikTok — a autenticação acontece inteiramente na página oficial do TikTok, no seu navegador.</p>
+  </section>
+
+  <section id="arquivos">
+    <h2><span class="num">03</span> Seus arquivos de vídeo</h2>
+    <p>Vídeos selecionados são lidos e, quando necessário, convertidos localmente com FFmpeg. Na publicação, o arquivo final é enviado diretamente do seu computador para os servidores do TikTok — nunca passa por um servidor do TikTok Studio, porque ele não existe.</p>
+  </section>
+
+  <section id="armazenamento">
+    <h2><span class="num">04</span> Onde tudo fica guardado</h2>
+    <ul>
+      <li><strong>Tokens de acesso e Client Secret do seu app TikTok</strong>: criptografados com a API nativa de criptografia do Windows (<code>DPAPI</code>, via <code>Electron safeStorage</code>) e salvos apenas na pasta de dados do aplicativo no seu usuário do Windows.</li>
+      <li><strong>Rascunhos, legendas salvas, histórico de publicações e configurações</strong>: salvos em um arquivo JSON local, também na pasta de dados do aplicativo.</li>
+      <li><strong>Arquivos de vídeo convertidos</strong>: salvos temporariamente numa pasta de trabalho local até serem enviados ao TikTok.</li>
+    </ul>
+  </section>
+
+  <section id="logs">
+    <h2><span class="num">05</span> Logs de diagnóstico</h2>
+    <p>O aplicativo mantém um log local de eventos (ex.: "conta conectada", "falha ao converter vídeo") para ajudar a diagnosticar problemas, visível na própria tela de Configurações. Tokens e segredos são automaticamente removidos do texto antes de qualquer registro. Esses logs nunca saem do seu computador — não há telemetria nem coleta remota de uso.</p>
+  </section>
+
+  <section id="terceiros">
+    <h2><span class="num">06</span> Compartilhamento com terceiros</h2>
+    <p class="muted">O TikTok Studio não vende, aluga nem compartilha nenhum dado com terceiros. A única parte externa envolvida é a própria TikTok Inc., que recebe exatamente o que é necessário para autenticar sua conta e publicar o vídeo que você escolheu publicar, sujeito à própria Política de Privacidade do TikTok.</p>
+  </section>
+
+  <section id="controle">
+    <h2><span class="num">07</span> Seu controle sobre os dados</h2>
+    <ul>
+      <li>Desconectar sua conta a qualquer momento em Configurações — isso apaga os tokens salvos localmente.</li>
+      <li>Revogar o acesso do aplicativo diretamente nas configurações de segurança da sua conta TikTok.</li>
+      <li>Apagar rascunhos, histórico e logs manualmente pelas telas correspondentes do aplicativo.</li>
+      <li>Desinstalar o aplicativo remove toda a pasta de dados local associada a ele.</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h2><span class="num">08</span> Contato</h2>
+    <p>Dúvidas sobre esta Política de Privacidade: <code>[preencha seu e-mail de contato aqui]</code></p>
+  </section>
+
+  <div class="footer-nav">
+    <span>TikTok Studio</span>
+    <a href="terms.html">Ver Termos de Uso →</a>
+  </div>
+
+</div>
+</body>
+</html>
